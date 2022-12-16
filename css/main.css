@@ -2,6 +2,15 @@
     outline: 1px solid tomato;
 } */
 
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+}
+
 .header h1 {
     font-size: 15px;
 }
@@ -19,12 +28,12 @@
 }
 
 .header .gnb {
-    margin: 0 0 0 30px;
+    margin: 0 0 0 20px;
 }
 
 .header .gnb>ul {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     margin: 0 0 0 300px;
 }
 
@@ -35,24 +44,59 @@
 .header .gnb>ul>li>a {
     font-size: 17px;
     color: #444444;
+    display: block;
+    text-align: center;
 }
 
-.header .gnb>ul>li~li::before {
+.header .gnb>ul>li .submenu {
+    position: absolute;
+    left: 1px;
+    right: 0;
+    line-height: 35px;
+    /* transform: translate(0, 0); */
+
+    /* width: 600px; */
+    text-align: center;
+    font-size: 15px;
+
+    padding: 20px 0;
+    display: none;
+}
+
+.header .gnb:hover>ul>li .submenu {
+    display: block;
+}
+
+.header .gnb>ul>li .submenu a {
+    color: #333;
+    text-align: center;
+}
+
+.header .gnb::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: -20px;
-    transform: translate(0, -50%);
+    top: 100px;
+    left: 0;
+    right: 0;
+    background: rgb(250, 250, 250);
+    border-top: 1px solid #ddd;
+}
 
-    width: 1px;
-    height: 12px;
-    background: #444444;
+.header:hover .gnb::before {
+    height: 350px;
 }
 
 .header .right {
     margin: 0 0 0 auto;
     font-size: 20px;
 }
+
+
+
+
+
+
+
 
 .mainVisual .mainSlide figure {
     position: relative;
@@ -131,8 +175,8 @@
 
     font-size: 0;
 
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -267,8 +311,11 @@
     display: inline-block;
     padding: 5px 15px;
     font-size: 15px;
-    background: #333;
-    color: #fff;
+    border-top: 1px solid #444444ab;
+    border-bottom: 1px solid #444444ab;
+    border-left: 1px solid #444444ab;
+    border-right: 1px solid #444444ab;
+    color: #444444ab;
     margin: 0 0 20px 0;
 }
 
@@ -277,14 +324,316 @@
     padding: 5px 15px;
     font-size: 15px;
     background: #f59518;
-    color: #333;
+
+
+    border-top: 1px solid #f59518;
+    border-bottom: 1px solid #f59518;
+    border-left: 1px solid #f59518;
+    border-right: 1px solid #f59518;
+    color: #fff;
     margin: 0 0 20px 0;
 }
 
-
-.mainProduct {
+.mainBanner {
+    position: relative;
+    text-align: center;
+    background: url(../img/main_banner01.jpg) no-repeat center center/cover;
     padding: 100px 0;
-    background: rgb(247, 247, 247);
+    height: 600px;
+    filter: grayscale(0.2);
+}
+
+.mainBanner h2 {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 39%;
+    padding: 250px 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    margin: 0 auto;
+}
+
+.mainBanner p {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 50%;
+    padding: 300px 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    margin: 0 0 30px 0;
+}
+
+.mainBanner .icon {
+    position: absolute;
+    top: -5%;
+    left: 0;
+    right: 56%;
+    padding: 380px 0;
+}
+
+.mainBanner i {
+    background: #f59518;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 50%;
+    text-shadow: 0 0 3px #000;
+}
+
+.mainBanner a {
+    font-size: 22px;
+    vertical-align: 2px;
+    margin: 0 10px 0 0;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+
+
+.mainNews {
+    padding: 100px 0;
+}
+
+.mainNews .inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.mainNews h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.mainNews P {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    text-align: center;
+    line-height: 22px;
+}
+
+.main_bg {
+    background: #f9f9f9;
+}
+
+.main_list>li {
+    position: relative;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.main_list>li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 2px solid #f59518;
+    border-left: 2px solid #f59518;
+    transition: 0.5s;
+}
+
+.main_list>li:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.main_list>li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 2px solid #f59518;
+    border-right: 2px solid #f59518;
+    transition: 0.5s;
+}
+
+.main_list>li:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.mainNews .main_list li {
+    margin: 0 0 10px 0;
+}
+
+.mainNews .main_list a {
+    position: relative;
+    z-index: 999;
+    display: block;
+    padding: 40px 50px;
+}
+
+.mainNews .main_list strong {
+    display: block;
+    margin: 0 0 20px 0;
+
+    font-size: 22px;
+    font-weight: 300;
+    color: #000;
+}
+
+.mainNews .main_list .cate {
+    color: #f59518;
+}
+
+.mainNews .main_list span {
+    color: #f59518;
+}
+
+
+
+
+.mainContent02 {
+    padding: 100px 0;
+}
+
+.mainContent02 h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mainContent02>p {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.mainContent02 .inner {
+    display: flex;
+    gap: 2px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.mainContent02 .inner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.mainContent02 .inner .case {
+    position: relative;
+}
+
+.mainContent02 .inner .case h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+}
+
+.mainContent02 .inner figure {
+    position: relative;
+    overflow: hidden;
+    /* filter: brightness(70%); */
+}
+
+.mainContent02 .inner .case h3::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    margin: 15px auto 0 auto;
+}
+
+.mainContent02 .inner figure .over {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px 15px;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+
+    /* transition: 0.5s; */
+}
+
+.mainContent02 .inner figure:hover .over {
+    left: 0;
+}
+
+.mainContent02 .inner .over h3 {
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #fff;
+    margin: 0 0 10px 0;
+}
+
+.mainContent02 .inner .over p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.mainContent02 .inner .over a {
+    position: relative;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    margin: auto 0 0 0;
+    color: #fff;
+}
+
+.mainContent02 .inner .over a:hover {
+    position: relative;
+    border: 1px solid #f59518;
+    padding: 10px 15px;
+    margin: auto 0 0 0;
+    color: #f59518;
+}
+
+
+.mainContent02 .inner .over i {
+    position: absolute;
+    top: 25%;
+    left: 90%;
+}
+
+.mainContent02 .inner .over i:hover {
+    position: absolute;
+    top: 25%;
+    left: 90%;
+    color: #f59518;
+}
+
+
+
+
+
+
+
+
+
+/* .mainProduct {
+    padding: 100px 0;
+    background: rgb(248, 248, 248);
     height: 600px;
 }
 
@@ -322,29 +671,27 @@
 }
 
 .mainProduct figure a {
+    position: relative;
     font-size: 20px;
+    color: #333;
+}
+
+.mainProduct figure a::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 215px;
+    right: 0;
+    background: #f59518;
+    width: 2px;
+    height: 48px;
 }
 
 .mainProduct figure a:hover {
     font-size: 23px;
     color: #f59518;
-}
+} */
 
-
-
-.mainProduct .arrows a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 37px;
-    height: 75px;
-
-    font-size: 0;
-
-    filter: contrast(98%) brightness(2%);
-}
 
 
 
